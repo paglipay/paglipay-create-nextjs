@@ -8,3 +8,4 @@ tasks:
 vscode:
   extensions:
     - dsznajder.es7-react-js-snippets
+    - esbenp.prettier-vscode
