@@ -11,7 +11,7 @@ function ProductImages() {
                 {[12].map((e, i) => {
                     return (<Col key={`imc-${i}`} lg={e}>
                         <Card key={`imca-${i}`} style={{ height: '100%' }}>
-                            <Image key={`im-${i}`} src={`https://source.unsplash.com/1600x900/?${pics[currentPic]}`} />
+                            <Image key={`im-${i}`} src={`https://source.unsplash.com/1600x900/?${pics[currentPic]}`} alt={`https://source.unsplash.com/1600x900/?${pics[currentPic]}`} />
                             <Card.Body>
                                 <Card.Title>{`${pics[currentPic]}`}</Card.Title>
                             </Card.Body>
@@ -24,7 +24,7 @@ function ProductImages() {
                     return (<Col key={`imc2-${i}`} lg={e}>
 
                         <Card key={`imca2-${i}`} style={{ height: '100%' }}>
-                            <Image onClick={() => setCurrentPic(randNum + i)} key={`im2-${i}`} src={`https://source.unsplash.com/1600x900/?${pics[randNum + i]}`} />
+                            <Image onClick={() => setCurrentPic(randNum + i)} key={`im2-${i}`} src={`https://source.unsplash.com/1600x900/?${pics[randNum + i]}`} alt={`https://source.unsplash.com/1600x900/?${pics[randNum + i]}`} />
                             {/* <Card.Body>
             <Card.Title></Card.Title>
           </Card.Body> */}

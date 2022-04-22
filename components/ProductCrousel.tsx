@@ -22,7 +22,7 @@ function ProductCrousel(props: any) {
       <Carousel>
         {pics.map((e, i) => {
           return (
-            <Carousel.Item>
+            <Carousel.Item key={`p-car-itm-${i}`}>
               <Container fluid>
                 <Row>
                   {props.cols.map((e:any, i:any) => {
