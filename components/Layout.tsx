@@ -9,9 +9,17 @@ const Layout = () => {
     ProductImages: require("./ProductImages").default,
     ReviewCrousel: require("./ReviewCrousel").default,
     ProductCrousel: require("./ProductCrousel").default,
+    UserCard: require("./ui/components/Home/UserCard").default,
   };
 
   const [jsonData, setJsonData] = useState([
+    {
+      code: "h",
+      componentType: "UserCard",
+      props: {
+        title: "UserCard",
+      },
+    },
     {
       code: "a",
       componentType: "AggrigateRating",
@@ -74,7 +82,7 @@ const Layout = () => {
       title: "Section Title",
       fluid: false,
       cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
-      featureTypesArry: ["i", "5", "p", "i", "5", "p", "i", "5", "p"],
+      featureTypesArry: ["i", "h", "p", "i", "5", "p", "i", "5", "p"],
     },
     {
       title: "Section Title",
