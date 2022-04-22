@@ -29,10 +29,10 @@ export interface LayoutState {
 const initialState: LayoutState = {
   sections: [
     {
-      title: "MyTable",
-      fluid: false,
-      cols: ["3", "3", "3", "3"],
-      featureTypesArry: ["i", "0", "0", "0"],
+      title: "Section Title",
+      fluid: true,
+      cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
+      featureTypesArry: ["l", "h", "i", "i", "i", "5", "5", "5", "5"],
     },
   ],
 } as const;
