@@ -25,7 +25,7 @@ function ProductCrousel(props: any) {
             <Carousel.Item>
               <Container fluid>
                 <Row>
-                  {props.cols.map((e, i) => {
+                  {props.cols.map((e:any, i:any) => {
                     const randNum = Math.floor(
                       Math.random() * (pics.length - 2)
                     );
