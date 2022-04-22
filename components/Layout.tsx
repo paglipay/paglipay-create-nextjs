@@ -29,14 +29,8 @@ const Layout = () => {
     {
       title: "Section Title",
       fluid: false,
-      cols: ["3", "3", "3", "3"],
-      featureTypesArry: ["0", "0", "0", "0"],
-    },
-    {
-      title: "Section Title",
-      fluid: false,
-      cols: ["3", "3", "3", "3"],
-      featureTypesArry: ["0", "0", "0", "0"],
+      cols: ["3"],
+      featureTypesArry: ["0"],
     },
   ]);
 
