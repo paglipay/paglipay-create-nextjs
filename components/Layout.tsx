@@ -7,6 +7,8 @@ const Layout = () => {
     ProductReviewCard: require("./ProductReviewCard").default,
     ProductPurchaseCard: require("./ProductPurchaseCard").default,
     ProductImages: require("./ProductImages").default,
+    ReviewCrousel: require("./ReviewCrousel").default,
+    ProductCrousel: require("./ProductCrousel").default,
   };
 
   const [jsonData, setJsonData] = useState([
@@ -26,18 +28,29 @@ const Layout = () => {
       },
     },
     {
-        code: "p",
-        componentType: "ProductPurchaseCard",
-        props: {
-            title: "FREE devlivery"
-        },
+      code: "p",
+      componentType: "ProductPurchaseCard",
+      props: {
+        title: "FREE devlivery",
+      },
     },
     {
-        code: "i",
-        componentType: "ProductImages",
-        // props: {
-        //     title: "one"
-        // },
+      code: "i",
+      componentType: "ProductImages",
+      // props: {
+      //     title: "one"
+      // },
+    },
+    {
+      code: "l",
+      componentType: "ReviewCrousel",
+    },
+    {
+      code: "k",
+      componentType: "ProductCrousel",
+      props: {
+        cols: [3, 3, 3, 3],
+      },
     },
   ]);
 
@@ -53,14 +66,20 @@ const Layout = () => {
   const [sections, setSections] = useState([
     {
       title: "Section Title",
-      fluid: false,
-      cols: ["4","5","3"],
-      featureTypesArry: ["i", "5", "p"],
+      fluid: true,
+      cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
+      featureTypesArry: ["l", "i", "i", "i", "i", "5", "5", "5", "5"],
     },
     {
       title: "Section Title",
       fluid: false,
-      cols: ["4","5","3"],
+      cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
+      featureTypesArry: ["i", "5", "p", "i", "5", "p", "i", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4", "5", "3"],
       featureTypesArry: ["i", "5", "p"],
     },
   ]);
