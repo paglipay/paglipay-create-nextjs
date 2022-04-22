@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai';
+import { Image } from 'react-bootstrap'
 function ProductReviewCard({ 
     profilePic = "/man.jpg",
     fullName = "Unknown",
@@ -13,7 +14,7 @@ function ProductReviewCard({
     return (
         <div style={{ textAlign: 'left' }}>
             <span >
-                <img className="profile" src={
+                <Image className="profile" src={
                    ( (profilePic!='') ? profilePic : "/man.jpg")
                 } />
             </span>
