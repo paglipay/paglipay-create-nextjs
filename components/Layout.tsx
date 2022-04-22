@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import ProductReview from "./ProductReview";
+import LayoutRender from "./LayoutRender";
 
 const Layout = () => {
   const components = {
     MyTable: require("./MyTable").default,
+    ProductReviewCard: require("./ProductReviewCard").default,
+    ProductPurchaseCard: require("./ProductPurchaseCard").default,
+    ProductImages: require("./ProductImages").default,
   };
 
   const [jsonData, setJsonData] = useState([
@@ -14,14 +17,36 @@ const Layout = () => {
         title: "zero",
       },
     },
+    {
+      code: "5",
+      componentType: "ProductReviewCard",
+      props: {
+        title: "I Love It! Five Stars",
+        rating: 5,
+      },
+    },
+    {
+        code: "p",
+        componentType: "ProductPurchaseCard",
+        props: {
+            title: "FREE devlivery"
+        },
+    },
+    {
+        code: "i",
+        componentType: "ProductImages",
+        // props: {
+        //     title: "one"
+        // },
+    },
   ]);
 
   const [dLayoutData, setDLayoutData] = useState([
     {
       title: "MyTable",
-      fluid: true,
+      fluid: false,
       cols: ["3", "3", "3", "3"],
-      featureTypesArry: ["0", "0", "0", "0"],
+      featureTypesArry: ["i", "0", "0", "0"],
     },
   ]);
 
@@ -29,8 +54,14 @@ const Layout = () => {
     {
       title: "Section Title",
       fluid: false,
-      cols: ["3"],
-      featureTypesArry: ["0"],
+      cols: ["4","5","3"],
+      featureTypesArry: ["i", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4","5","3"],
+      featureTypesArry: ["i", "5", "p"],
     },
   ]);
 
@@ -50,7 +81,7 @@ const Layout = () => {
           >
             <h1 key={`prl-sec-h1-${i}`}>{e.title}</h1>
           </section>
-          <ProductReview
+          <LayoutRender
             key={`prl-${i}`}
             showLayoutControls={showLayoutControls}
             components={components}
