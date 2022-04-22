@@ -3,7 +3,7 @@ import LayoutRender from "./LayoutRender";
 
 const Layout = () => {
   const components = {
-    MyTable: require("./MyTable").default,
+    AggrigateRating: require("./AggrigateRating").default,
     ProductReviewCard: require("./ProductReviewCard").default,
     ProductPurchaseCard: require("./ProductPurchaseCard").default,
     ProductImages: require("./ProductImages").default,
@@ -13,10 +13,10 @@ const Layout = () => {
 
   const [jsonData, setJsonData] = useState([
     {
-      code: "0",
-      componentType: "MyTable",
+      code: "a",
+      componentType: "AggrigateRating",
       props: {
-        title: "zero",
+        title: "AggrigateRating",
       },
     },
     {
@@ -81,6 +81,12 @@ const Layout = () => {
       fluid: false,
       cols: ["4", "5", "3"],
       featureTypesArry: ["i", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4", "5", "3"],
+      featureTypesArry: ["a", "5", "p"],
     },
   ]);
 
