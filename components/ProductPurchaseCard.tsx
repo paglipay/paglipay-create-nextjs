@@ -17,7 +17,7 @@ function ProductPurchaseCard({ title = "title" }) {
       <Button>Add to Cart</Button>
       <br /><br />
       <Button>Buy Now</Button>
-      <br />
+      <br /><br />
       <h5>
         <strong>{title}</strong>
       </h5>
