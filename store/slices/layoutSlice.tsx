@@ -13,6 +13,7 @@ import { createSlice, Draft, PayloadAction } from "@reduxjs/toolkit";
 //     featureTypesArry: any;
 // }
 export interface LayoutState {
+  jsonData: any;
   sections: any;
 }
 
@@ -27,6 +28,69 @@ export interface LayoutState {
 //   } as const;
 
 const initialState: LayoutState = {
+  jsonData: [
+    {
+      code: "c",
+      componentType: "ColsForm",
+      props: {
+        title: "ColsForm",
+      },
+    },
+    {
+      code: "f",
+      componentType: "FeatureForm",
+      props: {
+        title: "FeatureForm",
+      },
+    },
+    {
+      code: "h",
+      componentType: "UserCard",
+      props: {
+        title: "UserCard",
+      },
+    },
+    {
+      code: "a",
+      componentType: "AggrigateRating",
+      props: {
+        title: "AggrigateRating",
+      },
+    },
+    {
+      code: "5",
+      componentType: "ProductReviewCard",
+      props: {
+        title: "I Love It! Five Stars",
+        rating: 5,
+      },
+    },
+    {
+      code: "p",
+      componentType: "ProductPurchaseCard",
+      props: {
+        title: "FREE devlivery",
+      },
+    },
+    {
+      code: "i",
+      componentType: "ProductImages",
+      // props: {
+      //     title: "one"
+      // },
+    },
+    {
+      code: "l",
+      componentType: "ReviewCrousel",
+    },
+    {
+      code: "k",
+      componentType: "ProductCrousel",
+      props: {
+        cols: [3, 3, 3, 3],
+      },
+    },
+  ],
   sections: [
     {
       title: "Section Title",
@@ -38,7 +102,7 @@ const initialState: LayoutState = {
       title: "Section Title",
       fluid: false,
       cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
-      featureTypesArry: ["f", "h", "p", "i", "5", "p", "i", "5", "p"],
+      featureTypesArry: ["f", "h", "c", "i", "5", "p", "i", "5", "p"],
     },
     {
       title: "Section Title",
@@ -70,6 +134,12 @@ export const layoutSlice = createSlice({
       action: PayloadAction<typeof initialState.sections>
     ) => {
       state.sections = action.payload;
+    },
+    setJsonData: (
+      state: Draft<typeof initialState>,
+      action: PayloadAction<typeof initialState.jsonData>
+    ) => {
+      state.jsonData = action.payload;
     },
   },
 });

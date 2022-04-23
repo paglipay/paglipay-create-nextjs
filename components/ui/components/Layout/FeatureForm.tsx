@@ -10,16 +10,18 @@ function FeatureForm() {
   const dispatch = useDispatch();
   const { sections } = useSelector(getLayoutState);
 
-  const onClick = () =>{
-    dispatch(setSections([
-      {
-        title: "Section Title",
-        fluid: false,
-        cols: ["4", "5", "3"],
-        featureTypesArry: ["a", "5", "p"],
-      }
-    ]));
-  }
+  const onClick = () => {
+    dispatch(
+      setSections([
+        {
+          title: "Section Title",
+          fluid: false,
+          cols: ["4", "5", "3"],
+          featureTypesArry: ["c", "5", "p"],
+        },
+      ])
+    );
+  };
 
   return (
     <div>
