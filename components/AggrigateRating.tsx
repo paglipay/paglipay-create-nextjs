@@ -21,7 +21,7 @@ function AggrigateRating() {
                 <Row key={`ag-${i}`}>
                   {[
                     `${e.count} stars`,
-                    <ProgressBar striped variant="warning" now={e.percent} />,
+                    <ProgressBar key={`pb-${i}`} striped variant="warning" now={e.percent} />,
                     `${e.percent}%`,
                   ].map((c, j) => {
                     return <Col key={`ag-col-${j}`}> {c}</Col>;
