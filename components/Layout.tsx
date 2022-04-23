@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import LayoutRender from "./LayoutRender";
+import { useDispatch, useSelector } from "../store/store";
+import {
+  getLayoutState,
+  // setEmail,
+  // setName,
+} from "../store/slices/layoutSlice";
 
 const Layout = () => {
   const components = {
@@ -9,9 +15,25 @@ const Layout = () => {
     ProductImages: require("./ProductImages").default,
     ReviewCrousel: require("./ReviewCrousel").default,
     ProductCrousel: require("./ProductCrousel").default,
+    UserCard: require("./ui/components/Home/UserCard").default,
+    FeatureForm: require("./ui/components/Layout/FeatureForm").default,
   };
 
   const [jsonData, setJsonData] = useState([
+    {
+      code: "f",
+      componentType: "FeatureForm",
+      props: {
+        title: "FeatureForm",
+      },
+    },
+    {
+      code: "h",
+      componentType: "UserCard",
+      props: {
+        title: "UserCard",
+      },
+    },
     {
       code: "a",
       componentType: "AggrigateRating",
@@ -63,38 +85,39 @@ const Layout = () => {
     },
   ]);
 
-  const [sections, setSections] = useState([
-    {
-      title: "Section Title",
-      fluid: true,
-      cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
-      featureTypesArry: ["l", "i", "i", "i", "i", "5", "5", "5", "5"],
-    },
-    {
-      title: "Section Title",
-      fluid: false,
-      cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
-      featureTypesArry: ["i", "5", "p", "i", "5", "p", "i", "5", "p"],
-    },
-    {
-      title: "Section Title",
-      fluid: false,
-      cols: ["4", "5", "3"],
-      featureTypesArry: ["i", "5", "p"],
-    },
-    {
-      title: "Section Title",
-      fluid: false,
-      cols: ["4", "5", "3"],
-      featureTypesArry: ["a", "5", "p"],
-    },
-  ]);
+  const { sections } = useSelector(getLayoutState);
+  // const [sections, setSections] = useState([
+  //   {
+  //     title: "Section Title",
+  //     fluid: true,
+  //     cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
+  //     featureTypesArry: ["l", "i", "i", "i", "i", "5", "5", "5", "5"],
+  //   },
+  //   {
+  //     title: "Section Title",
+  //     fluid: false,
+  //     cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
+  //     featureTypesArry: ["i", "h", "p", "i", "5", "p", "i", "5", "p"],
+  //   },
+  //   {
+  //     title: "Section Title",
+  //     fluid: false,
+  //     cols: ["4", "5", "3"],
+  //     featureTypesArry: ["i", "5", "p"],
+  //   },
+  //   {
+  //     title: "Section Title",
+  //     fluid: false,
+  //     cols: ["4", "5", "3"],
+  //     featureTypesArry: ["a", "5", "p"],
+  //   },
+  // ]);
 
   const [showLayoutControls, setLayoutControls] = useState(true);
 
   return (
     <>
-      {sections.map((e, i) => (
+      {sections.map((e:any, i:any) => (
         <div key={`div-${i}`}>
           <section
             key={`prl-sec-${i}`}
