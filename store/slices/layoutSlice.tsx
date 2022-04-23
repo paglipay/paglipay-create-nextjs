@@ -32,7 +32,25 @@ const initialState: LayoutState = {
       title: "Section Title",
       fluid: true,
       cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
-      featureTypesArry: ["l", "h", "i", "i", "i", "5", "5", "5", "5"],
+      featureTypesArry: ["l", "i", "i", "i", "i", "5", "5", "5", "5"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4", "5", "3", "4", "5", "3", "4", "5", "3"],
+      featureTypesArry: ["f", "h", "p", "i", "5", "p", "i", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4", "5", "3"],
+      featureTypesArry: ["i", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4", "5", "3"],
+      featureTypesArry: ["a", "5", "p"],
     },
   ],
 } as const;
@@ -47,7 +65,7 @@ export const layoutSlice = createSlice({
   name: "layout",
   initialState,
   reducers: {
-    setSection: (
+    setSections: (
       state: Draft<typeof initialState>,
       action: PayloadAction<typeof initialState.sections>
     ) => {
@@ -60,6 +78,6 @@ export const layoutSlice = createSlice({
 export const getLayoutState = (state: { layout: LayoutState }) => state.layout;
 
 // Exports all actions
-// export const { setName, setEmail } = layoutSlice.actions;
+export const { setSections } = layoutSlice.actions;
 
 export default layoutSlice.reducer;

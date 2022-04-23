@@ -50,29 +50,37 @@ function LayoutRender(props: any) {
     console.log("useEffect formData: ", formData);
   }, [formData]);
 
-  const handleChange = (e: any) => {
-    const layoutString = e.target.value;
-    console.log(layoutString);
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    e.target.name === "layoutCols"
-      ? setCols(layoutString.split(":"))
-      : setFeatureTypesArry(layoutString.split(":"));
-  };
+  useEffect(() => {
+    console.log("props: ", props);
 
-  const handleLayoutColsFeatureTypes = (e: any) => {
-    const layoutString = e.target.value;
-    console.log("handleLayoutColsFeatureTypes: ", layoutString);
-    const [layoutCols, feature_types] = layoutString.split("-");
+    setCols(props.cols);
+      setFeatureTypesArry(props.featureTypesArry);
 
-    setFormData({
-      ...formData,
-      layoutCols: layoutCols,
-      feature_types: feature_types,
-    });
+  }, [props.featureTypesArry, props.cols]);
 
-    setCols(layoutCols.split(":"));
-    setFeatureTypesArry(feature_types.split(":"));
-  };
+  // const handleChange = (e: any) => {
+  //   const layoutString = e.target.value;
+  //   console.log(layoutString);
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  //   e.target.name === "layoutCols"
+  //     ? setCols(layoutString.split(":"))
+  //     : setFeatureTypesArry(layoutString.split(":"));
+  // };
+
+  // const handleLayoutColsFeatureTypes = (e: any) => {
+  //   const layoutString = e.target.value;
+  //   console.log("handleLayoutColsFeatureTypes: ", layoutString);
+  //   const [layoutCols, feature_types] = layoutString.split("-");
+
+  //   setFormData({
+  //     ...formData,
+  //     layoutCols: layoutCols,
+  //     feature_types: feature_types,
+  //   });
+
+  //   setCols(layoutCols.split(":"));
+  //   setFeatureTypesArry(feature_types.split(":"));
+  // };
   return (
     <>      
       <Container

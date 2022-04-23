@@ -16,9 +16,17 @@ const Layout = () => {
     ReviewCrousel: require("./ReviewCrousel").default,
     ProductCrousel: require("./ProductCrousel").default,
     UserCard: require("./ui/components/Home/UserCard").default,
+    FeatureForm: require("./ui/components/Layout/FeatureForm").default,
   };
 
   const [jsonData, setJsonData] = useState([
+    {
+      code: "f",
+      componentType: "FeatureForm",
+      props: {
+        title: "FeatureForm",
+      },
+    },
     {
       code: "h",
       componentType: "UserCard",
@@ -109,7 +117,7 @@ const Layout = () => {
 
   return (
     <>
-      {sections.map((e, i) => (
+      {sections.map((e:any, i:any) => (
         <div key={`div-${i}`}>
           <section
             key={`prl-sec-${i}`}
