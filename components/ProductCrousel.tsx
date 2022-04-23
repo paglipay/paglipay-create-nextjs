@@ -38,6 +38,9 @@ function ProductCrousel(props: any) {
                             src={`https://source.unsplash.com/1600x900/?${
                               pics[randNum + i]
                             }`}
+                            alt={`https://source.unsplash.com/1600x900/?${
+                              pics[randNum + i]
+                            }`}
                           />
                           {/* <Card.Body>
             <Card.Title></Card.Title>
