@@ -15,13 +15,7 @@ function LayoutRender(props: any) {
     {}
   );
 
-  // const featureTypes = res;
-  // const featureTypesArry = props.featureTypesArry;
-  // const features = featureTypesArry.map((e:any) => featureTypes[e]);
-  // const cols = props.cols;
-
   const [featureTypes, setFeatureTypes] = useState({});
-
   const [features, setFeatures] = useState([]);
   const [featureTypesArry, setFeatureTypesArry] = useState([]);
   const [cols, setCols] = useState([]);
@@ -30,7 +24,7 @@ function LayoutRender(props: any) {
     setFeatureTypes(res);
     setFeatureTypesArry(props.featureTypesArry);
     setCols(props.cols);
-  }, );
+  }, [props]);
 
   useEffect(() => {
     setFeatures(featureTypesArry.map((e) => featureTypes[e]));
