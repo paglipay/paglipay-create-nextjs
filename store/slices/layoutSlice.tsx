@@ -90,13 +90,50 @@ const initialState: LayoutState = {
         cols: [3, 3, 3, 3],
       },
     },
+    {
+      code: "y",
+      componentType: "Layout",
+      props: {
+        jsonData: [
+          {
+            code: "e",
+            componentType: "ProductCrousel",
+            props: {
+              cols: [4, 4, 4],
+            },
+          },
+          {
+            code: "c",
+            componentType: "ColsForm",
+            props: {
+              title: "ColsForm",
+            },
+          },
+          {
+            code: "f",
+            componentType: "FeatureForm",
+            props: {
+              title: "FeatureForm",
+            },
+          },
+        ],
+        sections: [
+          {
+            title: "Nested Section Title",
+            fluid: true,
+            cols: ["z", "4", "4"],
+            featureTypesArry: ["e", "c", "f"],
+          },
+        ],
+      },
+    },
   ],
   sections: [
     {
       title: "Section Title",
       fluid: true,
-      cols: ["z", "3", "3", "3", "3", "3", "3", "3", "3"],
-      featureTypesArry: ["l", "i", "i", "i", "i", "5", "5", "5", "5"],
+      cols: ["3", "3", "3", "3", "3", "3", "3", "3", "3"],
+      featureTypesArry: ["y", "i", "i", "i", "i", "5", "5", "5", "5"],
     },
     {
       title: "Section Title",

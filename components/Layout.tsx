@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import LayoutRender from "./LayoutRender";
-import { useDispatch, useSelector } from "../store/store";
-import {
-  getLayoutState,
-} from "../store/slices/layoutSlice";
+// import { useDispatch, useSelector } from "../store/store";
+// import {
+//   getLayoutState,
+// } from "../store/slices/layoutSlice";
 
-const Layout = () => {
+const Layout = (props:any) => {
   const components = {
     "AggrigateRating": require("./AggrigateRating").default,
     "ProductReviewCard": require("./ProductReviewCard").default,
@@ -16,9 +16,12 @@ const Layout = () => {
     "UserCard": require("./ui/components/Home/UserCard").default,
     "FeatureForm": require("./ui/components/Layout/FeatureForm").default,
     "ColsForm": require("./ui/components/Layout/ColsForm").default,
+    "Forms": require("./ui/components/Layout/Forms").default,
+    "Layout": require("./Layout").default,
   };
 
-  const { jsonData, sections } = useSelector(getLayoutState);
+  // const { jsonData, sections } = useSelector(getLayoutState);
+  const { jsonData, sections } = props;
 
   return (
     <>

@@ -24,7 +24,7 @@ function LayoutRender(props: any) {
     setFeatureTypes(res);
     setFeatureTypesArry(props.featureTypesArry);
     setCols(props.cols);
-  }, );
+  }, [props]);
 
   useEffect(() => {
     setFeatures(featureTypesArry.map((e) => featureTypes[e]));
