@@ -20,12 +20,6 @@ export interface LayoutState {
 /**
  * Default state object with initial values.
  */
-// const initialState: LayoutState = {
-//     title: "MyTable",
-//     fluid: false,
-//     cols: ["3", "3", "3", "3"],
-//     featureTypesArry: ["i", "0", "0", "0"],
-//   } as const;
 
 const initialState: LayoutState = {
   jsonData: [
@@ -96,13 +90,6 @@ const initialState: LayoutState = {
       props: {
         jsonData: [
           {
-            code: "e",
-            componentType: "ProductCrousel",
-            props: {
-              cols: [4, 4, 4],
-            },
-          },
-          {
             code: "c",
             componentType: "ColsForm",
             props: {
@@ -110,10 +97,41 @@ const initialState: LayoutState = {
             },
           },
           {
-            code: "f",
-            componentType: "FeatureForm",
+            code: "y",
+            componentType: "Layout",
             props: {
               title: "FeatureForm",
+              jsonData: [
+                {
+                  code: "e",
+                  componentType: "ProductCrousel",
+                  props: {
+                    cols: [4, 4, 4],
+                  },
+                },
+                {
+                  code: "c",
+                  componentType: "ColsForm",
+                  props: {
+                    title: "ColsForm",
+                  },
+                },
+                {
+                  code: "f",
+                  componentType: "FeatureForm",
+                  props: {
+                    title: "FeatureForm",
+                  },
+                },
+              ],
+              sections: [
+                {
+                  title: "Double Nested Section Title",
+                  fluid: true,
+                  cols: ["z", "6", "6"],
+                  featureTypesArry: ["e", "c", "f"],
+                },
+              ],
             },
           },
         ],
@@ -121,8 +139,8 @@ const initialState: LayoutState = {
           {
             title: "Nested Section Title",
             fluid: true,
-            cols: ["z", "4", "4"],
-            featureTypesArry: ["e", "c", "f"],
+            cols: ["6", "6"],
+            featureTypesArry: ["y", "c"],
           },
         ],
       },
@@ -132,7 +150,7 @@ const initialState: LayoutState = {
     {
       title: "Section Title",
       fluid: true,
-      cols: ["3", "3", "3", "3", "3", "3", "3", "3", "3"],
+      cols: ["6", "6", "3", "3", "3", "3", "3", "3", "3"],
       featureTypesArry: ["y", "i", "i", "i", "i", "5", "5", "5", "5"],
     },
     {
