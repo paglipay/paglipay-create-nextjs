@@ -1,8 +1,11 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
-import { Image } from "react-bootstrap";
+// import { Image } from "react-bootstrap";
+import Image from 'next/image'
+import mypic from '../assets/man.jpg'
+
 function ProductReviewCard({
-  profilePic = "/man.jpg",
+  profilePic = "assets/man.jpg",
   fullName = "Unknown",
   title = "After Years of FireTV, I am switching to Roku.",
   rating = 5,
@@ -15,10 +18,18 @@ function ProductReviewCard({
   return (
     <div style={{ textAlign: "left" }}>
       <span>
-        <Image
+        {/* <Image
           className="profile"
           src={profilePic != "" ? profilePic : "/man.jpg"}
           alt={profilePic != "" ? profilePic : "/man.jpg"}
+        /> */}
+        <Image
+          className="profile"
+          alt="Picture of the author"
+          width="50px"
+          height="50px"
+          layout="fixed"
+          src={mypic}
         />
       </span>
       <span style={{ display: "inline-flex", verticalAlign: "middle" }}>

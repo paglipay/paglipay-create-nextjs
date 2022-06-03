@@ -150,8 +150,20 @@ const initialState: LayoutState = {
     {
       title: "Section Title",
       fluid: true,
-      cols: ["6", "6", "3", "3", "3", "3", "3", "3", "3"],
-      featureTypesArry: ["y", "i", "i", "i", "i", "5", "5", "5", "5"],
+      cols: ["z"],
+      featureTypesArry: ["l"],
+    },
+    {
+      title: "Section Title",
+      fluid: false,
+      cols: ["4","4","4","4","4","4","4","4"],
+      featureTypesArry: ["i","i","i","5","5","5"],
+    },
+    {
+      title: "Section Title",
+      fluid: true,
+      cols: ["3","3","3","3","3","3","3","3"],
+      featureTypesArry: ["i","i","i","i","5","5","5","5"],
     },
     {
       title: "Section Title",
@@ -170,6 +182,12 @@ const initialState: LayoutState = {
       fluid: false,
       cols: ["4", "5", "3"],
       featureTypesArry: ["a", "5", "p"],
+    },
+    {
+      title: "Section Title",
+      fluid: true,
+      cols: ["6", "6", "3", "3", "3", "3", "3", "3", "3"],
+      featureTypesArry: ["y", "i", "i", "i", "i", "5", "5", "5", "5"],
     },
   ],
 } as const;
