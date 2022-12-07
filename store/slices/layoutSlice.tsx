@@ -55,7 +55,7 @@ const initialState: LayoutState = {
       code: "5",
       componentType: "ProductReviewCard",
       props: {
-        title: "I Love It! Five Stars",
+        title: "I Love It!!! Five Stars",
         rating: 5,
       },
     },
